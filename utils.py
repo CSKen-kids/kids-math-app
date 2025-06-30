@@ -86,3 +86,25 @@ def get_wrong_questions(limit=10):
     """, conn, params=(limit,))
     conn.close()
     return df
+
+DB_PATH = "kids_math_app.db"
+
+def get_all_study_results(limit=100):
+    conn = sqlite3.connect(DB_PATH)
+    df = pd.read_sql(
+        "SELECT * FROM study_results ORDER BY date DESC LIMIT ?",
+        conn,
+        params=(limit,)
+    )
+    conn.close()
+    return df
+
+def get_all_questions(limit=100):
+    conn = sqlite3.connect(DB_PATH)
+    df = pd.read_sql(
+        "SELECT * FROM questions ORDER BY date DESC LIMIT ?",
+        conn,
+        params=(limit,)
+    )
+    conn.close()
+    return df

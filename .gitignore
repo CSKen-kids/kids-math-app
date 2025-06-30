@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual environment
+venv/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Streamlit generated files
+.kids_math_app.db
+*.db
+
+# VSCode settings
+.vscode/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
